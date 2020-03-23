@@ -32,13 +32,19 @@ apt-get purge nginx nginx-common -y
 
 #remove all SSL certs
 
-rm -rf /etc/letsencrypt/live/$DOMAIN
+certbot delete --cert-name $DOMAIN
 
-rm -rf /etc/letsencrypt/renewal/$DOMAIN*
+rm -rf /etc/letsencrypt/
+rm -rf /var/lib/letsencrypt/
+rm -rf /var/log/letsencrypt/
 
 #remove the directory created
 
 rm -rf /var/www/$DOMAIN
+
+apt update
+apt upgrade
+apt autoremove
 
 rm -- "$0"
 
