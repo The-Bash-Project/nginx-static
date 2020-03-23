@@ -10,6 +10,11 @@ export DEBIAN_FRONTEND=noninteractive
 
 $1 = $domain
 
+echo deploying nginx for $domain
+
+
+sleep 2
+
 apt update
 apt upgrade -y
 
