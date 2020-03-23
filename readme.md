@@ -7,8 +7,8 @@ https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f
 
 
 ## Note
-### :warning: Remember to point your domain to the server before starting the script
-### :warning: Remember to add www CNAME record to the domain 
+### ⚠️ Remember to point your domain to the server before starting the script
+### ⚠️ Remember to add www CNAME record to the domain 
 
 
 ## Install Nginx
