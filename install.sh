@@ -141,3 +141,5 @@ nginx -t
 service nginx restart
 
 fi
+
+rm -- "$0"
