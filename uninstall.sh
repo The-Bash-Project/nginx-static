@@ -42,9 +42,9 @@ rm -rf /var/log/letsencrypt/
 
 rm -rf /var/www/$DOMAIN
 
-apt update
-apt upgrade
-apt autoremove
+apt update -y
+apt upgrade -y 
+apt autoremove -y
 
 rm -- "$0"
 
