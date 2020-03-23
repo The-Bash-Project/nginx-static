@@ -39,9 +39,15 @@ rm -rf /etc/nginx/sites-available/default
 
 mkdir /var/www/$DOMAIN/
 
-echo "NGINX LIVE!!" > /var/www/$DOMAIN/index.html
+#set up nginx welcome files
 
+cd /var/www/$DOMAIN/
 
+wget https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/default-page/install.zip
+
+unzip install.zip
+
+#set up sever blocks
 
 tee /etc/nginx/sites-available/$DOMAIN.conf > /dev/null <<EOF
 server {
