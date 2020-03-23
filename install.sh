@@ -22,7 +22,7 @@ then
 
 echo
 
-echo STARTING INSTALLATION !
+echo "STARTING INSTALLATION !"
 
 echo
 
