@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 $1 == $domain
 
-echo deploying nginx for 
+echo deploying nginx for $domain
 
 sleep 3
 
