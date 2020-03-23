@@ -30,6 +30,8 @@ apt-get purge nginx nginx-common -y
 
 rm -rf /etc/letsencrypt/live/$DOMAIN
 
+rm -rf /etc/letsencrypt/renewal/$DOMAIN*
+
 #remove the directory created
 
 rm -rf /var/www/$DOMAIN
