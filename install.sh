@@ -8,9 +8,8 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-domain = $1
 
-echo deploying nginx for $domain
+echo deploying nginx for $1
 
 sleep 3
 
@@ -19,24 +18,24 @@ apt upgrade -y
 
 apt install nginx -y
 
-mkdir /var/www/$domain/
+mkdir /var/www/$1/
 
-touch /var/www/$domain/index.html
+touch /var/www/$1/index.html
 
-tee /etc/nginx/sites-available/$domain.conf > /dev/null <<EOF
+tee /etc/nginx/sites-available/$1.conf > /dev/null <<EOF
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
   root /var/www/nginx-auto;
   index index.html;
-  server_name $domain www.$domain;
+  server_name $1 www.$1;
   location / {
     try_files $uri $uri/ =404;
   }
 }
 EOF
 
-ln -s /etc/nginx/sites-available/$domain.conf /etc/nginx/sites-enabled/$domain.conf
+ln -s /etc/nginx/sites-available/$1.conf /etc/nginx/sites-enabled/$1.conf
 
 
 
