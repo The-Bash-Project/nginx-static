@@ -8,7 +8,7 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-$1 = $domain
+$1 == $domain
 
 echo deploying nginx for $domain
 
