@@ -24,7 +24,9 @@ echo
 
 echo STARTING INSTALLATION !
 
-sleep 3
+echo
+
+sleep 2
 
 apt update
 apt upgrade -y

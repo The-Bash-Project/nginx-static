@@ -1,11 +1,13 @@
 # Nginx Auto
 
-```
-wget https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod +x install.sh; sudo ./install.sh
-```
-
-
+## Install Nginx
 
 ```
-wget https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/test.sh; sudo chmod +x test.sh; sudo ./test.sh
+wget -n https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod +x install.sh; sudo ./install.sh
+```
+
+## Ran Into An Error? Start Fresh!
+
+```
+wget -n https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
 ```
