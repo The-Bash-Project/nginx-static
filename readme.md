@@ -7,7 +7,9 @@ https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f
 
 
 ## Note
-#### ⚠️ Remember to Point your domain (FQDN) to the server’s IP by adding an A record before proceeding (example.com in “A” 192.168.0.1)
+#### ⚠️ Remember to Point your domain (FQDN) to the server’s IP by adding an A record before proceeding 
+#### (example.com in “A” 192.168.0.1)
+
 #### ⚠️ Add a www CNAME pointing to your root domain (www.example.com → example.com)
 
 &thinsp;
