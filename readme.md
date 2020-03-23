@@ -2,8 +2,8 @@
 ### Nginx Auto is a bash script that automates your NGINX Static Webserver Deployment
 
 ## Note
-### Remember to point your domain to the server before starting the script
-### Remember to add www CNAME record to the domain 
+### :warning: Remember to point your domain to the server before starting the script
+### :warning: Remember to add www CNAME record to the domain 
 
 
 ## Install Nginx
