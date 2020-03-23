@@ -8,12 +8,9 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-$1 == $domain
+echo deploying nginx for $1
 
-echo deploying nginx for $domain
-
-
-sleep 2
+sleep 3
 
 apt update
 apt upgrade -y
