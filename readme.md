@@ -1,6 +1,11 @@
 # Nginx Auto
 ### Nginx Auto is a bash script that automates your NGINX Static Webserver Deployment
 
+# Guide
+
+https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f3d
+
+
 ## Note
 ### :warning: Remember to point your domain to the server before starting the script
 ### :warning: Remember to add www CNAME record to the domain 
