@@ -12,14 +12,14 @@ https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f
 
 &thinsp;
 
-# 🙌 SSH into your instance and run the Installer and That’s It.
+## 🙌 SSH into your instance and run the Installer and That’s It.
 
 ```
 wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod +x install.sh; sudo ./install.sh
 ```
 &thinsp;
 
-# 🧙 Now FTP/ SFTP or Use a magic wand to move your assets into
+## 🧙 Now FTP/ SFTP or Use a magic wand to move your assets into
 
 ```
 /var/www/<your-domain-name-used-for-installation>
@@ -27,7 +27,7 @@ wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install
 
 &thinsp;
 
-# 🆘 Ran into trouble? Need a fresh restart? Use the Uninstall Command.
+## 🆘 Ran into trouble? Need a fresh restart? Use the Uninstall Command.
 
 ```
 wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
