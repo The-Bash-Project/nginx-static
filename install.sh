@@ -14,11 +14,16 @@ read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: mm.example.com) : ' DOMAIN
 
 echo
 
-read -p "Continue Installing Nginx Simple on $DOMAIN " -n 1 -r
+read -p "CONTINUE INSTALLING NGINX ON $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # do dangerous stuff
+
+echo
+
+echo STARTING INSTALLATION !
+
 sleep 3
 
 apt update
@@ -26,9 +31,15 @@ apt upgrade -y
 
 apt install nginx -y
 
+rm -rf /etc/nginx/sites-enabled/default
+
+rm -rf /etc/nginx/sites-available/default
+
 mkdir /var/www/$DOMAIN/
 
 touch /var/www/$DOMAIN/index.html
+
+
 
 tee /etc/nginx/sites-available/$DOMAIN.conf > /dev/null <<EOF
 server {
