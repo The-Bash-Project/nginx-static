@@ -8,7 +8,9 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-echo deploying nginx for $1
+$1 == $domain
+
+echo deploying nginx for 
 
 sleep 3
 
@@ -17,9 +19,11 @@ apt upgrade -y
 
 apt install nginx -y
 
-mkdir /var/www/nginx-auto/
+mkdir /var/www/$domain/
 
-tee /etc/nginx/sites-available/n-auto.conf > /dev/null <<EOF
+touch /var/www/$domain/index.html
+
+tee /etc/nginx/sites-available/$domain.conf > /dev/null <<EOF
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
@@ -32,7 +36,7 @@ server {
 }
 EOF
 
-ln -s /etc/nginx/sites-available/n-auto.conf /etc/nginx/sites-enabled/n-auto.conf
+ln -s /etc/nginx/sites-available/$domain.conf /etc/nginx/sites-enabled/$domain.conf
 
 
 
