@@ -14,6 +14,11 @@ read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: mm.example.com) : ' DOMAIN
 
 echo
 
+read -p "Continue Installing Nginx Simple on $DOMAIN " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # do dangerous stuff
 sleep 3
 
 apt update
@@ -122,5 +127,4 @@ rm renewcert
 nginx -t
 service nginx restart
 
-
-
+fi
