@@ -74,7 +74,7 @@ apt install python-certbot-nginx -y
 
 #issue new certs
 
-certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $DOMAIN
+certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $DOMAIN,www.$DOMAIN
 
 tee /etc/nginx/sites-available/$DOMAIN.conf > /dev/null <<EOF
 
