@@ -39,7 +39,7 @@ rm -rf /etc/nginx/sites-available/default
 
 mkdir /var/www/$DOMAIN/
 
-touch /var/www/$DOMAIN/index.html
+echo "NGINX LIVE!!" > /var/www/$DOMAIN/index.html
 
 
 
