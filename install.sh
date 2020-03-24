@@ -45,6 +45,8 @@ cd /var/www/$DOMAIN/
 
 wget https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/default-page/install.zip
 
+apt install unzip -y
+
 unzip install.zip
 
 #set up sever blocks
@@ -147,6 +149,20 @@ rm renewcert
 #restart nginx
 nginx -t
 service nginx restart
+
+#ADDING GZIP COMPRESSION SETTINGS
+
+tee -a /etc/nginx/nginx.conf > /dev/null <<EOT
+#GZIP SETTINGS
+gzip_disable "msie6";
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_buffers 16 8k;
+gzip_http_version 1.1;
+gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+EOT
 
 fi
 
