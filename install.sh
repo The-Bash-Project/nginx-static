@@ -147,7 +147,7 @@ rm renewcert
 
 
 #restart nginx
-nginx -t
+
 service nginx restart
 
 #ADDING GZIP COMPRESSION SETTINGS
@@ -164,6 +164,17 @@ gzip_http_version 1.1;
 gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
 EOT
+
+nginx -t
+service nginx restart
+
+echo
+
+echo
+
+echo "Congratulations! Your NGINX is live :)"
+
+echo
 
 fi
 
