@@ -63,7 +63,7 @@ echo
 echo " ✗  Cannot valiate A record for $FQDN"
 echo 
 
-echo " ✗  $FQDN does not point to server's IP $AWS_SERVICE"
+echo " ✗  $FQDN does not point to current server's IP $AWS_SERVICE"
 
 echo 
 
