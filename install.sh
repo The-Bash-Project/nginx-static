@@ -108,6 +108,8 @@ rm -rf /etc/nginx/sites-enabled/default
 
 rm -rf /etc/nginx/sites-available/default
 
+rm -rf /var/www/html
+
 mkdir /var/www/$FQDN/
 
 #set up nginx welcome files
