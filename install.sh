@@ -28,7 +28,7 @@ echo " ✓ Please make sure that $DOMAIN_INSTALL has an A record pointing to $(c
 
 echo 
 
-read -p "Does $DOMAIN_INSTALL have an A record pointing to $(curl --silent http://checkip.amazonaws.com) and a WWW CNAME record pointing to $DOMAIN_INSTALL ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
+read -p "? Does $DOMAIN_INSTALL have an A record pointing to $(curl --silent http://checkip.amazonaws.com) and a WWW CNAME record pointing to $DOMAIN_INSTALL ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
