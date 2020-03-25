@@ -33,3 +33,14 @@ wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install
 ```
 wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
 ```
+
+## How to add an A Record and C Name Record
+
+### 1. Go to your DNS hosting provider
+### If you have forgotten your DNS hosting provider, NO PROBLEM, go to [mxtoolbox.com](https://mxtoolbox.com))
+
+
+### 2. Create an A record with your domain that points to your server's IP address.
+### Run `$ curl http://checkip.amazonaws.com` to find your server's IP address.
+
+### 3. Create a CNAME record of `www` that points to your domain.
