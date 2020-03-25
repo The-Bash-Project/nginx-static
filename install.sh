@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo
 
-read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: example.com) : ' DOMAIN
+read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: http://checkip.amazonaws.com/example.com) : ' DOMAIN
 
 echo
 
@@ -174,7 +174,6 @@ gzip_comp_level 6;
 gzip_buffers 16 8k;
 gzip_http_version 1.1;
 gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-
 EOT
 
 nginx -t
@@ -190,3 +189,4 @@ echo
 
 fi
 
+fi
