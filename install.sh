@@ -24,6 +24,7 @@ echo
 
 echo " ✓ Please make sure that $DOMAIN_INSTALL has an WWW CNAME record pointing to $DOMAIN_INSTALL "
 
+echo 
 
 read -p " ? Proceed with Installtion ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 
