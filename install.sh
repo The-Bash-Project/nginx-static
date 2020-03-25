@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo
 
-read -p 'Enter the domain name (FQDN) you want to install Nginx on: 'DOMAIN_INSTALL
+read -p 'Enter the domain name (FQDN) you want to install Nginx on: ' DOMAIN_INSTALL
 
 echo
 
