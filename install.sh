@@ -31,6 +31,7 @@ read -p " ? Proceed with Installtion ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+
 f="$DOMAIN_INSTALL"
 
 ## Remove protocol part of url  ##
@@ -77,7 +78,7 @@ fi
 if [ "$DOMAIN_WWW" == "$AWS_SERVICE" ]
 then
 echo
-echo " ✔  WWW CNAME Validated for $FQDN" 
+echo " ✓ WWW CNAME Validated for $FQDN" 
 echo
 
 else 
@@ -90,16 +91,9 @@ echo
 exit 1
 fi
 
-
-read -p "CONTINUE INSTALLING NGINX ON $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    # do dangerous stuff
-
 echo
 
-echo "STARTING INSTALLATION !"
+echo "✓ Starting Installtion "
 
 echo
 
@@ -258,5 +252,5 @@ else
 echo
 echo "✗ Installation Aborted. Bye Bye !"
 echo
-fi
+
 
