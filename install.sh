@@ -53,7 +53,7 @@ DOMAIN=$(dig +short $FQDN A | sort -n )
 
 AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
 
-DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
+DOMAIN_WWW=$(dig +short www.suhail.tech | tail -n1 )
 
 
 if [ "$DOMAIN" == "$AWS_SERVICE" ]
@@ -74,7 +74,7 @@ echo
 exit 1
 fi
 
-if [ "$DOMAIN_WWW" == "$FQDN" ]
+if [ "$DOMAIN_WWW" == "$AWS_SERVICE" ]
 then
 echo
 echo " ✔  WWW CNAME Validated for $FQDN" 
