@@ -93,7 +93,7 @@ fi
 
 echo
 
-echo "✓ Starting Installtion "
+echo " ✓ Starting Installtion "
 
 echo
 
