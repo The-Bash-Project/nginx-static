@@ -8,23 +8,81 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
+DOMAIN=$(dig +short $FQDN A | sort -n )
+
+AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
+
+DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
+
 echo
 
-read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: http://checkip.amazonaws.com/example.com) : ' DOMAIN
+read -p 'Enter the Domain Name to Install Nginx + SSL on  : ' DOMAIN_INSTALL
 
 echo
 
-echo "THIS NGINX INSTALLATION WILL INSTALL SSL CERTIFICATES FOR YOUR DOMAIN."
+echo "Nginx-Auto will provision SSL certificates for $DOMAIN_INSTALL and www.$DOMAIN_INSTALL"
 
-echo "PLEASE MAKE SURE THAT $DOMAIN IS POINTED TO THE SERVER'S IP ADDRESS AND YOU HAVE CREATED A WWW CNAME RECORD THAT POINTS TO $DOMAIN"
+echo
 
-echo "IF YOU DO NOT KNOW WHAT AN A RECORD OR A CNAME RECORD IS, PLEASE REFER TO DOCUMENTATION ON GITHUB"
+echo "Please make sure that $DOMAIN has an A record pointing to $AWS_SERVICE "
+
 
 read -p "DOES $DOMAIN HAVE AN A RECORD POINTING TO $(curl --silent http://checkip.amazonaws.com) AND A WWW CNAME RECORD POINTING TO $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  # GOOD TO GO!
+
+
+f="$DOMAIN_INSTALL"
+
+## Remove protocol part of url  ##
+f="${f#http://}"
+f="${f#https://}"
+f="${f#ftp://}"
+f="${f#scp://}"
+f="${f#scp://}"
+f="${f#sftp://}"
+f="${f#www.}"
+## Remove username and/or username:password part of URL  ##
+f="${f#*:*@}"
+f="${f#*@}"
+## Remove rest of urls ##
+f=${f%%/*}
+ 
+FQDN=$f
+
+
+
+if [ "$DOMAIN" == "$AWS_SERVICE" ]
+then
+echo 
+echo " ✓  A record validated for $FQDN"
+echo 
+
+else 
+echo 
+echo " ✗  Cannot valiate A record for $FQDN"
+echo 
+
+echo " $FQDN does not point to server's IP $AWS_SERVICE"
+
+exit 1
+fi
+
+if [ "$DOMAIN_WWW" == "$FQDN" ]
+then
+echo
+echo " ✔  WWW CNAME Validated for $FQDN" 
+echo
+
+else 
+echo 
+echo " ✗  Cannot valiate CNAME record for $FQDN"
+echo
+echo "WWW CNAME does not exist for $FQDN "
+exit 1
+fi
+
 
 read -p "CONTINUE INSTALLING NGINX ON $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo    # (optional) move to a new line
