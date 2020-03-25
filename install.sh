@@ -16,18 +16,18 @@ DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
 
 echo
 
-read -p 'Enter the Domain Name you want to Install Nginx + SSL on  : ' DOMAIN_INSTALL
+read -p 'Enter the domain name (FQDN) you want to install Nginx on: ' DOMAIN_INSTALL
 
 echo
 
-echo "Nginx-Auto will provision SSL certificates for $DOMAIN_INSTALL and www.$DOMAIN_INSTALL"
+echo " ✓ Nginx-Auto will automatically provision SSL certificates for $DOMAIN_INSTALL and www.$DOMAIN_INSTALL"
 
 echo
 
-echo "Please make sure that $DOMAIN has an A record pointing to $(curl --silent http://checkip.amazonaws.com) "
+echo " ✓ Please make sure that $DOMAIN_INSTALL has an A record pointing to $(curl --silent http://checkip.amazonaws.com) "
 
 
-read -p "DOES $DOMAIN HAVE AN A RECORD POINTING TO $(curl --silent http://checkip.amazonaws.com) AND A WWW CNAME RECORD POINTING TO $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
+read -p "Does $DOMAIN_INSTALL have an A record pointing to $(curl --silent http://checkip.amazonaws.com) and a WWW CNAME record pointing to $DOMAIN_INSTALL ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
