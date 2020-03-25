@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo
 
-read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: mm.example.com) : ' DOMAIN
+read -p 'ENTER DOMAIN NAME WITHOUT WWW PREFIX (eg: example.com) : ' DOMAIN
 
 echo
 
@@ -94,7 +94,7 @@ apt install python-certbot-nginx -y
 
 #issue new certs
 
-certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $DOMAIN,www.$DOMAIN
+certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $DOMAIN, www.$DOMAIN
 
 tee /etc/nginx/sites-available/$DOMAIN.conf > /dev/null <<EOF
 
