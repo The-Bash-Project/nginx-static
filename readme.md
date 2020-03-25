@@ -16,7 +16,7 @@ https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f
 ## 🙌 SSH into your instance and run the Installer and That’s It.
 
 ```
-wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
+wget -q -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
 ```
 &thinsp;
 
@@ -31,7 +31,7 @@ wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install
 ## 🆘 Ran into trouble? Need a fresh restart? Use the Uninstall Command.
 
 ```
-wget -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
+wget -q -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
 ```
 
 ## How to add an A Record and C Name Record
