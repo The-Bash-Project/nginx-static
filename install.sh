@@ -12,11 +12,11 @@ DOMAIN=$(dig +short $FQDN A | sort -n )
 
 AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
 
-DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
+DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -1 )
 
 echo
 
-read -p 'Enter the Domain Name to Install Nginx + SSL on  : ' DOMAIN_INSTALL
+read -p 'Enter the Domain Name you want to Install Nginx + SSL on  : ' DOMAIN_INSTALL
 
 echo
 
@@ -64,7 +64,9 @@ echo
 echo " ✗  Cannot valiate A record for $FQDN"
 echo 
 
-echo " $FQDN does not point to server's IP $AWS_SERVICE"
+echo " ✗  $FQDN does not point to server's IP $AWS_SERVICE"
+
+echo 
 
 exit 1
 fi
@@ -79,7 +81,9 @@ else
 echo 
 echo " ✗  Cannot valiate CNAME record for $FQDN"
 echo
-echo "WWW CNAME does not exist for $FQDN "
+echo " ✗ WWW CNAME does not exist for $FQDN "
+echo
+
 exit 1
 fi
 
