@@ -8,12 +8,6 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-DOMAIN=$(dig +short $FQDN A | sort -n )
-
-AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
-
-DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
-
 echo
 
 read -p 'Enter the domain name (FQDN) you want to install Nginx on: ' DOMAIN_INSTALL
@@ -49,6 +43,12 @@ f="${f#*@}"
 f=${f%%/*}
  
 FQDN=$f
+
+DOMAIN=$(dig +short $FQDN A | sort -n )
+
+AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
+
+DOMAIN_WWW=$(dig +short www.$FQDN CNAME | sort -n )
 
 
 
