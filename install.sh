@@ -31,8 +31,6 @@ read -p "Does $DOMAIN_INSTALL have an A record pointing to $(curl --silent http:
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-
-
 f="$DOMAIN_INSTALL"
 
 ## Remove protocol part of url  ##
@@ -251,4 +249,7 @@ echo
 
 fi
 
+else 
+echo "Bye Bye !"
 fi
+
