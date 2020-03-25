@@ -24,7 +24,7 @@ echo "Nginx-Auto will provision SSL certificates for $DOMAIN_INSTALL and www.$DO
 
 echo
 
-echo "Please make sure that $DOMAIN has an A record pointing to $(curl --silent http://checkip.amazonaws.com "
+echo "Please make sure that $DOMAIN has an A record pointing to $(curl --silent http://checkip.amazonaws.com) "
 
 
 read -p "DOES $DOMAIN HAVE AN A RECORD POINTING TO $(curl --silent http://checkip.amazonaws.com) AND A WWW CNAME RECORD POINTING TO $DOMAIN ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
