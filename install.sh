@@ -153,12 +153,9 @@ apt install python-certbot-nginx -y
 
 #issue new certs
 
-certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $FQDN,www.$FQDN
+certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $FQDN, www.$FQDN
 
 tee /etc/nginx/sites-available/$FQDN.conf > /dev/null <<EOF
-
-# mattermost default port config
-
 server {
      listen [::]:80;
      listen 80;
