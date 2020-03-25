@@ -26,6 +26,7 @@ echo
 
 echo " ✓ Please make sure that $DOMAIN_INSTALL has an A record pointing to $(curl --silent http://checkip.amazonaws.com) "
 
+echo 
 
 read -p "Does $DOMAIN_INSTALL have an A record pointing to $(curl --silent http://checkip.amazonaws.com) and a WWW CNAME record pointing to $DOMAIN_INSTALL ? (TYPE 'Y' TO CONTINUE) : " -n 1 -r
 echo
@@ -77,7 +78,7 @@ echo
 
 else 
 echo 
-echo " ✗  Cannot valiate CNAME record for $FQDN"
+echo "   Cannot valiate CNAME record for $FQDN"
 echo
 echo " ✗ WWW CNAME does not exist for $FQDN "
 echo
@@ -243,13 +244,15 @@ echo
 
 echo
 
-echo "Congratulations! Your NGINX is live :)"
+echo "✓ Congratulations! Installation Successfull"
 
 echo
 
 fi
 
 else 
-echo "Bye Bye !"
+echo
+echo "✗ Installation Aborted. Bye Bye !"
+echo
 fi
 
