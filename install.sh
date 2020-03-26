@@ -54,7 +54,7 @@ DOMAIN=$(dig +short $FQDN A | sort -n )
 
 AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
 
-DOMAIN_WWW=$(dig +short www.$DOMAIN | tail -n1 )
+DOMAIN_WWW=$(dig +short www.$FQDN | tail -n1 )
 
 
 if [ "$DOMAIN" == "$AWS_SERVICE" ]
