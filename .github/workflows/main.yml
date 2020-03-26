@@ -25,4 +25,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Install Nginx-Auto
       run: wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
-
+    
+    - name: Install Nginx-Auto
+      run: wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
