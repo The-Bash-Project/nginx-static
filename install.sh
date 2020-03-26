@@ -150,7 +150,7 @@ apt update -y
 
 apt upgrade -y
 
-apt install python-certbot-nginx -y
+apt install certbot python-certbot-nginx -y
 
 
 #issue new certs
