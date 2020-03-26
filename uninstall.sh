@@ -34,6 +34,8 @@ apt-get purge nginx nginx-common -y
 
 certbot delete --cert-name $DOMAIN
 
+apt remove --purge certbot python-certbot-nginx -y
+
 rm -rf /etc/letsencrypt/
 rm -rf /var/lib/letsencrypt/
 rm -rf /var/log/letsencrypt/
