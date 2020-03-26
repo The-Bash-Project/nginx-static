@@ -16,7 +16,7 @@ https://medium.com/@ChinyaSuhail/install-nginx-on-ubuntu-the-easy-way-b92704bb3f
 ## 🙌 SSH into your instance and run the Installer and That’s It.
 
 ```
-wget -q -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
+wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
 ```
 &thinsp;
 
