@@ -99,7 +99,10 @@ echo
 
 sleep 2
 
+sudo add-apt-repository ppa:ondrej/nginx
+
 apt update
+
 apt upgrade -y
 
 apt install nginx -y
