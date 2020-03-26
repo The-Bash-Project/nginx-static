@@ -249,7 +249,7 @@ echo
 
 echo
 
-echo "✓ Congratulations! Installation Successfull"
+echo "✓ Congratulations! Installation Successfull; Nginx live at https://$FQDN "
 
 echo
 
@@ -475,6 +475,6 @@ echo
 
 echo
 
-echo "✓ Congratulations! Installation Successfull"
+echo "✓ Congratulations! Installation Successfull; Nginx live at https://$FQDN"
 fi
 
