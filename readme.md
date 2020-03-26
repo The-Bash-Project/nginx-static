@@ -31,7 +31,7 @@ wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/ins
 ## 🆘 Ran into trouble? Need a fresh restart? Use the Uninstall Command.
 
 ```
-wget -q -N https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
+wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/uninstall.sh; sudo chmod +x uninstall.sh; sudo ./uninstall.sh
 ```
 
 ## How to add an A Record and C Name Record
