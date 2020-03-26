@@ -54,7 +54,7 @@ DOMAIN=$(dig +short $FQDN A | sort -n )
 
 AWS_SERVICE=$(curl -s https://checkip.amazonaws.com)
 
-DOMAIN_WWW=$(dig +short www.suhail.tech | tail -n1 )
+DOMAIN_WWW=$(dig +short www.$FQDN | tail -n1 )
 
 
 if [ "$DOMAIN" == "$AWS_SERVICE" ]
@@ -150,12 +150,12 @@ apt update -y
 
 apt upgrade -y
 
-apt install python-certbot-nginx -y
+apt install certbot python-certbot-nginx -y
 
 
 #issue new certs
 
-certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $FQDN, www.$FQDN
+certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $FQDN,www.$FQDN
 
 tee /etc/nginx/sites-available/$FQDN.conf > /dev/null <<EOF
 server {
