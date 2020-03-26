@@ -7,4 +7,4 @@ jobs:
       - checkout
       - run:
           name: "Testing"
-          command: wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/install.sh; sudo chmod 100 install.sh; sudo ./install.sh
+          command: wget -q -N https://github.com/chinyasuhail/nginx-auto/releases/download/v1.0/install.sh; sudo chmod install.sh; sudo ./install.sh ci.suhail.tech
