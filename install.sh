@@ -152,6 +152,11 @@ nginx -t
 service nginx restart
 
 #install certbot
+
+#Required for Docker Setup
+apt-get install software-properties-common
+apt-get install gpg
+
 add-apt-repository ppa:certbot/certbot -y
 
 apt update -y
