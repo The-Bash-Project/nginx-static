@@ -124,7 +124,7 @@ mkdir /var/www/$FQDN/
 
 cd /var/www/$FQDN/
 
-wget https://raw.githubusercontent.com/chinyasuhail/nginx-auto/master/default-page/install.zip
+wget https://raw.githubusercontent.com/The-Bash-Project/nginx-auto/master/default-page/install.zip
 
 apt install unzip -y
 
