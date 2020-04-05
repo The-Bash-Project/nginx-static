@@ -104,8 +104,6 @@ echo
 
 sleep 2
 
-sudo add-apt-repository ppa:ondrej/nginx -y
-
 apt update
 
 apt upgrade -y
