@@ -130,6 +130,11 @@ unzip install.zip
 
 #set up sever blocks
 
+tee /etc/nginx/whitelist.conf > /dev/null <<EOF
+deny all;
+EOF
+
+
 tee /etc/nginx/sites-available/$FQDN.conf > /dev/null <<EOF
 server {
   listen 80 default_server;
@@ -180,6 +185,8 @@ server {
 
      server_name $FQDN www.$FQDN;
 
+     include /etc/nginx/whitelist.conf;
+
      return 301 https://$FQDN\$request_uri;
 }
 
@@ -189,10 +196,12 @@ server {
 
      server_name www.$FQDN;
 
+     include /etc/nginx/whitelist.conf;
+
      ssl_certificate /etc/letsencrypt/live/$FQDN/fullchain.pem;
      ssl_certificate_key /etc/letsencrypt/live/$FQDN/privkey.pem;
 
-     ssl_protocols TLSv1.2 ;
+     ssl_protocols TLSv1.2, TLSv1.3 ;
 
      add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
 
@@ -204,11 +213,13 @@ server {
      listen 443 ssl http2;
 
      server_name $FQDN;
+     
+    include /etc/nginx/whitelist.conf;
 
      ssl_certificate /etc/letsencrypt/live/$FQDN/fullchain.pem;
      ssl_certificate_key /etc/letsencrypt/live/$FQDN/privkey.pem;
 
-     ssl_protocols TLSv1.2 ;
+     ssl_protocols TLSv1.2, TLSv1.3 ;
 
      add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
 
