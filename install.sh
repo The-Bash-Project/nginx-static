@@ -227,13 +227,17 @@ server {
     
     index index.html;
     
-     location ~ \.php$ {
-        try_files $uri =404;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
     }
 }
 
