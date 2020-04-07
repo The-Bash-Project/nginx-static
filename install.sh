@@ -201,7 +201,7 @@ server {
      ssl_certificate /etc/letsencrypt/live/$FQDN/fullchain.pem;
      ssl_certificate_key /etc/letsencrypt/live/$FQDN/privkey.pem;
 
-     ssl_protocols TLSv1.2, TLSv1.3 ;
+     ssl_protocols TLSv1.2 TLSv1.3 ;
 
      add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
 
@@ -219,7 +219,7 @@ server {
      ssl_certificate /etc/letsencrypt/live/$FQDN/fullchain.pem;
      ssl_certificate_key /etc/letsencrypt/live/$FQDN/privkey.pem;
 
-     ssl_protocols TLSv1.2, TLSv1.3 ;
+     ssl_protocols TLSv1.2 TLSv1.3 ;
 
      add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
 
@@ -227,7 +227,7 @@ server {
     
     index index.html;
     
-      location ~ \.php$ {
+     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
@@ -236,8 +236,6 @@ server {
         include fastcgi_params;
     }
 }
-
-    }
 
 EOF
 
