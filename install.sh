@@ -168,6 +168,11 @@ apt install certbot python-certbot-nginx -y
 
 certbot --register-unsafely-without-email --nginx certonly --agree-tos -d $FQDN,www.$FQDN
 
+#install PHP
+
+apt install php-fpm -y
+
+
 tee /etc/nginx/sites-available/$FQDN.conf > /dev/null <<EOF
 server {
      listen [::]:80;
@@ -210,6 +215,16 @@ server {
     root /var/www/$FQDN;
     
     index index.html;
+    
+      location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
 
     }
 
