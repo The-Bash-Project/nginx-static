@@ -226,18 +226,13 @@ server {
     root /var/www/$FQDN;
     
     index index.html;
-    
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
     location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
-    }
-
-    location ~ /\.ht {
-        deny all;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
     }
 }
 
