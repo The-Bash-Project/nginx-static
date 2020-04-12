@@ -131,7 +131,7 @@ unzip install.zip
 #set up sever blocks
 
 tee /etc/nginx/whitelist.conf > /dev/null <<EOF
-deny all;
+allow all;
 EOF
 
 
@@ -226,6 +226,7 @@ server {
     root /var/www/$FQDN;
     
     index index.html;
+    
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -235,7 +236,6 @@ server {
         include fastcgi_params;
     }
 }
-
 EOF
 
 #write out current crontab
